@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#143d2b">
+  <title>איטליה 2026 – המדריך המשפחתי</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">שרי ובני רודא</p>
+      <h1>איטליה 2026 🇮🇹</h1>
+    </div>
+    <button id="themeBtn" class="icon-btn" aria-label="החלפת מצב תצוגה">◐</button>
+  </header>
+
+  <main id="app">
+    <section id="homeView" class="view active">
+      <div class="hero">
+        <div>
+          <span class="pill">29.7–10.8.2026</span>
+          <h2 id="heroTitle">הטיול המשפחתי לצפון איטליה</h2>
+          <p id="countdown"></p>
+        </div>
+      </div>
+
+      <section class="today-card card">
+        <div class="section-title">
+          <div>
+            <span class="muted">היום בטיול</span>
+            <h2 id="todayTitle">טוען...</h2>
+          </div>
+          <button id="openToday" class="primary">ליום המלא</button>
+        </div>
+        <div id="todayPreview"></div>
+      </section>
+
+      <section>
+        <h2 class="section-heading">גישה מהירה</h2>
+        <div class="quick-grid">
+          <button class="quick" data-view="daysView"><span>📅</span>כל הימים</button>
+          <button class="quick" data-view="hotelsView"><span>🏨</span>מלונות</button>
+          <button class="quick" data-view="foodView"><span>🍝</span>אוכל</button>
+          <button class="quick" data-view="checklistView"><span>✅</span>רשימת ציוד</button>
+          <button class="quick" data-view="emergencyView"><span>🆘</span>חירום</button>
+          <button class="quick" data-view="favoritesView"><span>❤️</span>מועדפים</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="daysView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>כל ימי הטיול</h2></div>
+      <div id="daysList"></div>
+    </section>
+
+    <section id="dayView" class="view">
+      <div class="view-head"><button class="back">→</button><h2 id="dayViewTitle"></h2></div>
+      <div id="dayContent"></div>
+    </section>
+
+    <section id="hotelsView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>בתי מלון</h2></div>
+      <div id="hotelsList"></div>
+    </section>
+
+    <section id="foodView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>אוכל ומסעדות</h2></div>
+      <input id="foodSearch" class="search" placeholder="חיפוש מסעדה או אזור">
+      <div id="foodList"></div>
+    </section>
+
+    <section id="checklistView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>רשימת ציוד</h2></div>
+      <div id="checklist"></div>
+    </section>
+
+    <section id="emergencyView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>חירום</h2></div>
+      <div id="emergencyList"></div>
+    </section>
+
+    <section id="favoritesView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>מועדפים</h2></div>
+      <div id="favoritesList"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-view="homeView" class="active">🏠<span>בית</span></button>
+    <button data-view="daysView">📅<span>ימים</span></button>
+    <button data-view="favoritesView">❤️<span>מועדפים</span></button>
+    <button data-view="emergencyView">🆘<span>חירום</span></button>
+  </nav>
+  <script src="app.js"></script>
+</body>
+</html>

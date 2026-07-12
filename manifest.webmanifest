@@ -1,0 +1,11 @@
+{
+  "name": "איטליה 2026 – המדריך המשפחתי",
+  "short_name": "איטליה 2026",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f3ed",
+  "theme_color": "#143d2b",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": []
+}

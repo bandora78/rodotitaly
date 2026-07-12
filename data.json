@@ -1,0 +1,625 @@
+{
+  "days": [
+    {
+      "date": "2026-07-29",
+      "day": "יום רביעי",
+      "title": "טיסה למילאנו",
+      "region": "מילאנו מלפנסה",
+      "hotel": "First Hotel Milano Malpensa Airport",
+      "events": [
+        {
+          "time": "18:30",
+          "title": "המראה לישראל–מילאנו",
+          "type": "flight",
+          "details": "טיסת ערב למילאנו."
+        },
+        {
+          "time": "21:40",
+          "title": "נחיתה במילאנו",
+          "type": "flight",
+          "details": "נחיתה בשדה התעופה מלפנסה."
+        },
+        {
+          "time": "22:30",
+          "title": "שאטל או מונית למלון",
+          "type": "drive",
+          "details": "מעבר למלון ליד שדה התעופה.",
+          "maps": "First Hotel Milano Malpensa Airport"
+        }
+      ],
+      "notes": [
+        "להכין מראש דרכונים, רישיונות נהיגה ושובר השכרת רכב."
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "day": "יום חמישי",
+      "title": "ממילאנו לאגם גארדה",
+      "region": "פסקרייה דל גארדה וסירמיונה",
+      "hotel": "Relais Corte Paradiso",
+      "events": [
+        {
+          "time": "09:00",
+          "title": "איסוף הרכב",
+          "type": "car",
+          "details": "הגעה לחברת ההשכרה."
+        },
+        {
+          "time": "10:00",
+          "title": "איסוף המשפחה ויציאה לגארדה",
+          "type": "drive",
+          "details": "נסיעה לכיוון פסקרייה דל גארדה."
+        },
+        {
+          "time": "12:00",
+          "title": "צ'ק אין והתארגנות",
+          "type": "hotel",
+          "details": "Relais Corte Paradiso",
+          "maps": "Relais Corte Paradiso"
+        },
+        {
+          "time": "13:00",
+          "title": "טיול בפסקרייה דל גארדה",
+          "type": "walk",
+          "details": "חניה ב-Festung Parcheggio, מעבר דרך Porta Brescia, העיר העתיקה והטיילת לאורך התעלות.",
+          "maps": "Festung Parcheggio Peschiera del Garda"
+        },
+        {
+          "time": "17:00",
+          "title": "סירמיונה",
+          "type": "walk",
+          "details": "חניה ב-Parcheggio Monte Baldo וטיול בעיר העתיקה עד הערב.",
+          "maps": "Parcheggio Monte Baldo Sirmione"
+        }
+      ],
+      "food": [
+        "Ristorante Il Cantinone",
+        "La Gelateria HomeMade"
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "day": "יום שישי",
+      "title": "גארדלנד",
+      "region": "אגם גארדה",
+      "hotel": "Relais Corte Paradiso",
+      "events": [
+        {
+          "time": "10:00",
+          "title": "פארק גארדלנד",
+          "type": "attraction",
+          "details": "יום בפארק השעשועים. שעות מתוכננות: 10:00–23:00.",
+          "maps": "Gardaland Park"
+        },
+        {
+          "time": "לבחירה",
+          "title": "האקווריום של גארדלנד",
+          "type": "attraction",
+          "details": "כרטיס נפרד."
+        },
+        {
+          "time": "לבחירה",
+          "title": "LEGOLAND Water Park",
+          "type": "attraction",
+          "details": "מתאים במיוחד לילדים עד גיל 10."
+        },
+        {
+          "time": "ערב",
+          "title": "לאציזה",
+          "type": "walk",
+          "details": "עיירה מוקפת חומה עם סמטאות וטיילת ארוכה. חניה בחניון San Martino.",
+          "maps": "Parcheggio San Martino Lazise"
+        }
+      ],
+      "links": [
+        {
+          "label": "אתר גארדלנד",
+          "url": "https://www.gardaland.it/en"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "day": "יום שבת",
+      "title": "אמיליה רומאנה",
+      "region": "מודנה ומראנלו",
+      "hotel": "Relais Corte Paradiso",
+      "events": [
+        {
+          "time": "10:00",
+          "title": "חוות פרמז'ן",
+          "type": "food",
+          "details": "סיור שהוזמן ב-4 Madonne Caseificio dell'Emilia.",
+          "maps": "4 Madonne Caseificio dell'Emilia"
+        },
+        {
+          "time": "צהריים",
+          "title": "מוזיאון למבורגיני",
+          "type": "museum",
+          "details": "ביקור במוזיאון הרכב.",
+          "maps": "Lamborghini Automobile Museum"
+        },
+        {
+          "time": "אחה״צ",
+          "title": "מוזיאון פרארי במראנלו",
+          "type": "museum",
+          "details": "פתוח עד 19:00. אפשר לשלב סימולטור.",
+          "maps": "Museo Ferrari Maranello"
+        }
+      ],
+      "links": [
+        {
+          "label": "חוות הפרמז'ן",
+          "url": "https://www.caseificio4madonne.it"
+        },
+        {
+          "label": "מוזיאון למבורגיני",
+          "url": "https://www.lamborghini.com/en-en/museum"
+        },
+        {
+          "label": "מוזיאון פרארי",
+          "url": "https://www.ferrari.com/en-IL/museums"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "day": "יום ראשון",
+      "title": "צפון גארדה ועלייה לדולומיטים",
+      "region": "אגם טנו, לימונה ואורטיזי",
+      "hotel": "Apartments Villa Quenz Family Suites",
+      "events": [
+        {
+          "time": "09:00",
+          "title": "יציאה",
+          "type": "drive",
+          "details": "יציאה מאגם גארדה לכיוון צפון."
+        },
+        {
+          "time": "בוקר",
+          "title": "אגם טנו",
+          "type": "nature",
+          "details": "מסלול קצר והיקפי סביב אגם קטן וצבעוני.",
+          "maps": "Parcheggio Lago di Tenno"
+        },
+        {
+          "time": "צהריים",
+          "title": "לימונה סול גארדה",
+          "type": "walk",
+          "details": "טיול בעיירה, חוף Cola ואפשרות לשכור אופניים למסלול Ciclopista del Garda.",
+          "maps": "Parcheggio Multipiano Limone sul Garda"
+        },
+        {
+          "time": "17:00",
+          "title": "נסיעה לדולומיטים",
+          "type": "drive",
+          "details": "מעבר לאורטיזי ולמלון."
+        }
+      ],
+      "food": [
+        "Ristorante Bar Pizzeria L'Agrumeto",
+        "Il Cortiletto",
+        "HOSTARIA AL BUONGUSTO",
+        "Waikiki Gelateria"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "day": "יום שני",
+      "title": "סשדה, פארק חבלים ואורטיזי",
+      "region": "אורטיזי",
+      "hotel": "Apartments Villa Quenz Family Suites",
+      "events": [
+        {
+          "time": "09:00",
+          "title": "רכבל סשדה",
+          "type": "nature",
+          "details": "עלייה בשני קטעים. תצפית הצלב וההר האלכסוני. להתחיל מוקדם.",
+          "maps": "Seceda Cable Car Ortisei"
+        },
+        {
+          "time": "14:30",
+          "title": "פארק חבלים Col de Flam",
+          "type": "attraction",
+          "details": "פארק חבלים ו-Fly Line, כ-3 שעות.",
+          "maps": "Adventure Park & Fly Line Emozion Col de Flam"
+        },
+        {
+          "time": "17:30",
+          "title": "טיול באורטיזי",
+          "type": "walk",
+          "details": "המדרחוב, הכיכרות והרחוב הראשי Strada Rezia.",
+          "maps": "Strada Rezia Ortisei"
+        }
+      ],
+      "links": [
+        {
+          "label": "כרטיסי סשדה",
+          "url": "https://seceda.axess.shop/en/Products/Tickets/Category?cID=4000"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "day": "יום שלישי",
+      "title": "Plose וקיוזה",
+      "region": "ברסאנונה",
+      "hotel": "Apartments Villa Quenz Family Suites",
+      "events": [
+        {
+          "time": "09:00",
+          "title": "יציאה ל-Plose",
+          "type": "drive",
+          "details": "יום פעילויות מלא בהר."
+        },
+        {
+          "time": "בוקר",
+          "title": "רכבל Plose",
+          "type": "nature",
+          "details": "עלייה להר ותכנון כ-4 שעות פעילות.",
+          "maps": "Plosekabinenbahn Talstation"
+        },
+        {
+          "time": "צהריים",
+          "title": "WoodyWalk ו-PloseBob",
+          "type": "attraction",
+          "details": "מסלול משפחתי ומזחלות אלפיניות."
+        },
+        {
+          "time": "אחה״צ",
+          "title": "Mountain Carts",
+          "type": "attraction",
+          "details": "ירידה של כ-9 ק״מ בקארטינג הרים."
+        },
+        {
+          "time": "ערב",
+          "title": "קיוזה",
+          "type": "walk",
+          "details": "עיירת אמנים עם סמטאות וכיכרות. חניה בחניון P2.",
+          "maps": "Parcheggio P2 Chiusa"
+        }
+      ],
+      "food": [
+        "Almgasthof Geisler",
+        "Plose Ristorante La Finestra"
+      ],
+      "links": [
+        {
+          "label": "אתר Plose",
+          "url": "https://www.plose.org/en"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "day": "יום רביעי",
+      "title": "מראנו ובולצאנו",
+      "region": "דרום טירול",
+      "hotel": "Apartments Villa Quenz Family Suites",
+      "events": [
+        {
+          "time": "09:00",
+          "title": "יציאה למראנו",
+          "type": "drive",
+          "details": "כשעה ורבע נסיעה."
+        },
+        {
+          "time": "בוקר",
+          "title": "גני טראוטמנסדורף",
+          "type": "nature",
+          "details": "גנים מדורגים ומסלולים צבעוניים.",
+          "maps": "Trauttmansdorff Gardens"
+        },
+        {
+          "time": "צהריים",
+          "title": "מרכז מראנו",
+          "type": "walk",
+          "details": "חניה ב-Parcheggio Terme, טיילת Gilfpromenade והמרכז ההיסטורי.",
+          "maps": "Parcheggio Terme Merano"
+        },
+        {
+          "time": "16:00",
+          "title": "בולצאנו",
+          "type": "walk",
+          "details": "שוק Obstmarkt, Via dei Portici, Via Museo וקפה לואקר.",
+          "maps": "Parking Bozen Bolzano Center"
+        }
+      ],
+      "links": [
+        {
+          "label": "גני טראוטמנסדורף",
+          "url": "https://www.trauttmansdorff.it/en"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "day": "יום חמישי",
+      "title": "מעבר סלה וראפטינג",
+      "region": "דולומיטים דרום",
+      "hotel": "Apartments Villa Quenz Family Suites",
+      "events": [
+        {
+          "time": "09:30",
+          "title": "יציאה",
+          "type": "drive",
+          "details": "נסיעה דרך מעבר סלה."
+        },
+        {
+          "time": "10:00",
+          "title": "Passo Sella",
+          "type": "nature",
+          "details": "עצירת תצפית בכביש הנוף.",
+          "maps": "Passo Sella"
+        },
+        {
+          "time": "12:00",
+          "title": "Avisio Rafting",
+          "type": "attraction",
+          "details": "להגיע לפחות 15 דקות מראש.",
+          "maps": "Avisio Rafting"
+        },
+        {
+          "time": "במקביל",
+          "title": "Latemar MontagnAnimata",
+          "type": "attraction",
+          "details": "רכבת אלפינית, אבובים, מסלול גולות ומשחקים.",
+          "maps": "Latemar MontagnAnimata"
+        },
+        {
+          "time": "אופציה",
+          "title": "אגם קארצה",
+          "type": "nature",
+          "details": "מסלול היקפי סביב האגם.",
+          "maps": "Lago di Carezza"
+        }
+      ],
+      "contacts": [
+        {
+          "name": "לוצ׳יה – ראפטינג",
+          "phone": "+393475323839"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "day": "יום שישי",
+      "title": "נקיק ואגם נופש",
+      "region": "קלטרר סי",
+      "hotel": "Apartments Villa Quenz Family Suites",
+      "events": [
+        {
+          "time": "09:00",
+          "title": "יציאה",
+          "type": "drive",
+          "details": "כשעה נסיעה."
+        },
+        {
+          "time": "בוקר",
+          "title": "Rastenbachklamm",
+          "type": "nature",
+          "details": "מסלול בנקיק. חניה ב-Müllereck Parkplatz.",
+          "maps": "Müllereck Parkplatz"
+        },
+        {
+          "time": "צהריים",
+          "title": "Lido am Kalterer See",
+          "type": "beach",
+          "details": "חוף אגם נופש עם פעילויות.",
+          "maps": "Lido am Kalterer See"
+        }
+      ],
+      "food": [
+        "Restaurant Pizzeria Geier"
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "day": "יום שבת",
+      "title": "מונטה פאנה",
+      "region": "סנטה כריסטינה וסלבה",
+      "hotel": "Apartments Villa Quenz Family Suites",
+      "events": [
+        {
+          "time": "09:30",
+          "title": "זיפליין Monte Pana",
+          "type": "attraction",
+          "details": "להזמין חלון בוקר מראש.",
+          "maps": "Zipline Monte Pana"
+        },
+        {
+          "time": "11:30",
+          "title": "Pana Raida",
+          "type": "nature",
+          "details": "מסלול משפחתי חווייתי באורך כ-3 ק״מ."
+        },
+        {
+          "time": "13:00",
+          "title": "Troi Unika",
+          "type": "nature",
+          "details": "מסלול קצר, יצירתי ואינסטגרמי."
+        },
+        {
+          "time": "14:00",
+          "title": "מיני גולף",
+          "type": "attraction",
+          "details": "אפשר לשלב לפי הזמן."
+        },
+        {
+          "time": "15:30",
+          "title": "רכיבה על סוסים",
+          "type": "attraction",
+          "details": "חוות Pozzamanigoni בסלבה.",
+          "maps": "Pozzamanigoni"
+        }
+      ],
+      "contacts": [
+        {
+          "name": "ג׳וליה – רכיבה",
+          "phone": "+393484023981"
+        }
+      ],
+      "links": [
+        {
+          "label": "Zipline Monte Pana",
+          "url": "https://www.ziplinemontepana.com/en"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "day": "יום ראשון",
+      "title": "מהדולומיטים לוונציה",
+      "region": "מרמולדה, אלגה ו-Quarto d'Altino",
+      "hotel": "Park Hotel Junior",
+      "events": [
+        {
+          "time": "בוקר",
+          "title": "Passo Sella ו-Passo Fedaia",
+          "type": "nature",
+          "details": "נסיעת נוף, אגם פאדאיה והסכר.",
+          "maps": "Passo Fedaia"
+        },
+        {
+          "time": "צהריים",
+          "title": "סוטוגודה",
+          "type": "walk",
+          "details": "רחוב אמנים, פסלים ובתים מיוחדים.",
+          "maps": "Sottoguda"
+        },
+        {
+          "time": "אחה״צ",
+          "title": "אגם אלגה",
+          "type": "nature",
+          "details": "עצירות צילום ב-Alleghe sul lago וב-Parchetto di Rusech.",
+          "maps": "Alleghe sul lago"
+        },
+        {
+          "time": "ערב",
+          "title": "נסיעה למלון ליד ונציה",
+          "type": "drive",
+          "details": "לינה ב-Quarto d'Altino.",
+          "maps": "Park Hotel Junior Quarto d'Altino"
+        }
+      ],
+      "food": [
+        "Madly",
+        "Boomerang",
+        "Ristorante Pizzeria Vecio Decimo"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "day": "יום שני",
+      "title": "ונציה וטיסה חזרה",
+      "region": "ונציה",
+      "hotel": "—",
+      "events": [
+        {
+          "time": "09:00",
+          "title": "יציאה לתחנת הרכבת",
+          "type": "drive",
+          "details": "חניה בתחנת Quarto d'Altino."
+        },
+        {
+          "time": "בוקר",
+          "title": "רכבת ל-Venezia Santa Lucia",
+          "type": "train",
+          "details": "לקנות כרטיס הלוך. בחזרה לבחור רכבת לכיוון Portogruaro או Trieste.",
+          "maps": "Quarto d'Altino train station"
+        },
+        {
+          "time": "10:00",
+          "title": "טיול בוונציה",
+          "type": "walk",
+          "details": "הרובע היהודי, גונדולה S. Sofia, גשר ריאלטו, סמטאות וכיכר סן מרקו."
+        },
+        {
+          "time": "16:00",
+          "title": "רכבת חזרה",
+          "type": "train",
+          "details": "חזרה למלון."
+        },
+        {
+          "time": "17:45",
+          "title": "יציאה לשדה",
+          "type": "drive",
+          "details": "תדלוק ב-Tamoil והחזרת הרכב בחניון P1.",
+          "maps": "VCE Park P1 Multipiano"
+        },
+        {
+          "time": "19:00",
+          "title": "הגעה לטרמינל",
+          "type": "flight",
+          "details": "מעבר רגלי מחניון P1."
+        },
+        {
+          "time": "22:00",
+          "title": "המראה",
+          "type": "flight",
+          "details": "טיסה חזרה לישראל."
+        }
+      ],
+      "food": [
+        "Cafe Brunch",
+        "Al Grill",
+        "Hard Rock Cafe Venice"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "First Hotel Milano Malpensa Airport",
+      "area": "מילאנו מלפנסה"
+    },
+    {
+      "name": "Relais Corte Paradiso",
+      "area": "פסקרייה דל גארדה"
+    },
+    {
+      "name": "Apartments Villa Quenz Family Suites",
+      "area": "אורטיזי"
+    },
+    {
+      "name": "Park Hotel Junior",
+      "area": "Quarto d'Altino"
+    }
+  ],
+  "emergency": [
+    {
+      "name": "מספר חירום אירופי",
+      "phone": "112"
+    },
+    {
+      "name": "Ospedale di Bressanone",
+      "area": "דולומיטים"
+    },
+    {
+      "name": "Krankenhaus Bozen",
+      "area": "בולצאנו"
+    },
+    {
+      "name": "Ospedale di Arco - Pronto Soccorso",
+      "area": "אגם גארדה"
+    },
+    {
+      "name": "Pederzoli Hospital, Emergency Department",
+      "area": "פסקרייה דל גארדה"
+    }
+  ],
+  "checklist": [
+    "דרכונים",
+    "רישיון נהיגה ישראלי",
+    "רישיון נהיגה בינלאומי",
+    "שובר רכב מודפס",
+    "כרטיס אשראי בינלאומי על שם הנהג הראשי",
+    "ביטוח נסיעות",
+    "מטענים",
+    "סוללה ניידת",
+    "בגדי ים",
+    "נעלי הליכה",
+    "מעילי גשם",
+    "תרופות קבועות",
+    "דיסק חניה"
+  ]
+}
