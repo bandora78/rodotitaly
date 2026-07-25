@@ -4,16 +4,42 @@ const $=s=>document.querySelector(s);
 const $$=s=>[...document.querySelectorAll(s)];
 const state={selectedDay:0};
 const favorites=()=>JSON.parse(localStorage.getItem("favorites")||"[]");
-const saveFavorites=x=>localStorage.setItem("favorites",JSON.stringify(x));
+const saveFavorites=x=>{localStorage.setItem("favorites",JSON.stringify(x));DriveSync.scheduleSave();};
 const mapsLink=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+
+
+const expenses=()=>JSON.parse(localStorage.getItem("expenses")||"[]");
+const saveExpenses=x=>{localStorage.setItem("expenses",JSON.stringify(x));DriveSync.scheduleSave();};
+const money=n=>new Intl.NumberFormat("he-IL",{style:"currency",currency:"EUR"}).format(Number(n||0));
+function safeText(s){const d=document.createElement("div");d.textContent=s||"";return d.innerHTML}
+function renderExpenses(){
+  const list=expenses().sort((a,b)=>b.date.localeCompare(a.date));
+  $("#expenseTotal").textContent=money(list.reduce((s,x)=>s+Number(x.amount||0),0));
+  const grouped={}; list.forEach(x=>grouped[x.category]=(grouped[x.category]||0)+Number(x.amount||0));
+  $("#expenseByCategory").innerHTML=Object.entries(grouped).sort((a,b)=>b[1]-a[1])
+    .map(([cat,sum])=>`<span class="category-chip">${cat}: ${money(sum)}</span>`).join("")||'<span class="muted">עדיין לא נרשמו הוצאות</span>';
+  $("#expensesList").innerHTML=list.length?list.map(x=>`<article class="expense-row"><div><h4>${safeText(x.category)}${x.note?` · ${safeText(x.note)}`:""}</h4><div class="expense-meta">${formatDate(x.date)}</div><div class="expense-actions"><button class="delete-expense" onclick="deleteExpense('${x.id}')">מחק</button></div></div><div class="expense-amount">${money(x.amount)}</div></article>`).join(""):'<div class="empty">עדיין לא הוספתם הוצאות</div>';
+}
+window.deleteExpense=id=>{saveExpenses(expenses().filter(x=>x.id!==id));renderExpenses()}
+function setupExpenses(){
+  $("#expenseDate").value=new Date().toISOString().slice(0,10);
+  $("#expenseForm").onsubmit=e=>{
+    e.preventDefault();
+    const item={id:String(Date.now()),amount:Number($("#expenseAmount").value),category:$("#expenseCategory").value,date:$("#expenseDate").value,note:$("#expenseNote").value.trim()};
+    const list=expenses(); list.push(item); saveExpenses(list); e.target.reset(); $("#expenseDate").value=new Date().toISOString().slice(0,10); renderExpenses();
+  };
+  $("#clearExpenses").onclick=()=>{if(confirm("למחוק את כל ההוצאות שנרשמו?")){localStorage.removeItem("expenses");renderExpenses();DriveSync.scheduleSave();}};
+}
 
 async function init(){
   DATA=await fetch("data.json").then(r=>r.json());
-  renderHome(); renderDays(); renderHotels(); renderFood(); renderChecklist(); renderEmergency(); renderFavorites();
+  renderHome(); renderDays(); renderHotels(); renderFood(); renderChecklist(); renderEmergency(); renderFavorites(); renderExpenses();
   bindNav();
   if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
   $("#themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("dark",document.body.classList.contains("dark"))};
   if(localStorage.getItem("dark")==="true") document.body.classList.add("dark");
+  setupExpenses();
+  DriveSync.init();
 }
 function showView(id){
   $$(".view").forEach(v=>v.classList.remove("active")); $("#"+id).classList.add("active");
@@ -82,7 +108,7 @@ function renderChecklist(){
   const checked=JSON.parse(localStorage.getItem("checklist")||"{}");
   $("#checklist").innerHTML=DATA.checklist.map((x,i)=>`<label class="check-item"><input type="checkbox" ${checked[i]?"checked":""} onchange="saveCheck(${i},this.checked)"><span>${x}</span></label>`).join("");
 }
-window.saveCheck=function(i,v){const c=JSON.parse(localStorage.getItem("checklist")||"{}");c[i]=v;localStorage.setItem("checklist",JSON.stringify(c))}
+window.saveCheck=function(i,v){const c=JSON.parse(localStorage.getItem("checklist")||"{}");c[i]=v;localStorage.setItem("checklist",JSON.stringify(c));DriveSync.scheduleSave()}
 function renderEmergency(){
   $("#emergencyList").innerHTML=DATA.emergency.map(e=>`<div class="emergency"><b>${e.name}</b>${e.area?`<p class="muted">${e.area}</p>`:""}<div class="actions">${e.phone?`<a href="tel:${e.phone}">📞 ${e.phone}</a>`:`<a target="_blank" href="${mapsLink(e.name)}">📍 ניווט</a>`}</div></div>`).join("");
 }

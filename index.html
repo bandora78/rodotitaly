@@ -27,6 +27,23 @@
         </div>
       </div>
 
+
+      <section class="card sync-card">
+        <div class="section-title">
+          <div>
+            <span class="muted">גיבוי וסנכרון</span>
+            <h2>Google Drive</h2>
+          </div>
+          <span id="syncDot" class="sync-dot offline"></span>
+        </div>
+        <p id="syncStatus" class="muted">לא מחובר ל-Google Drive</p>
+        <div class="actions">
+          <button id="connectDrive" class="primary">התחברות ל-Google</button>
+          <button id="syncNow" class="secondary-btn" hidden>סנכרן עכשיו</button>
+          <button id="disconnectDrive" class="secondary-btn" hidden>ניתוק</button>
+        </div>
+      </section>
+
       <section class="today-card card">
         <div class="section-title">
           <div>
@@ -47,6 +64,7 @@
           <button class="quick" data-view="checklistView"><span>✅</span>רשימת ציוד</button>
           <button class="quick" data-view="emergencyView"><span>🆘</span>חירום</button>
           <button class="quick" data-view="favoritesView"><span>❤️</span>מועדפים</button>
+          <button class="quick" data-view="expensesView"><span>💶</span>הוצאות</button>
         </div>
       </section>
     </section>
@@ -86,6 +104,35 @@
       <div class="view-head"><button class="back">→</button><h2>מועדפים</h2></div>
       <div id="favoritesList"></div>
     </section>
+
+    <section id="expensesView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>ניהול הוצאות</h2></div>
+      <section class="card expense-summary">
+        <span class="muted">סה״כ הוצאות</span>
+        <h2 id="expenseTotal">€0.00</h2>
+        <div id="expenseByCategory" class="category-summary"></div>
+      </section>
+      <section class="card">
+        <h3>הוספת הוצאה</h3>
+        <form id="expenseForm" class="expense-form">
+          <label><span>סכום באירו</span><input id="expenseAmount" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="לדוגמה: 25.50"></label>
+          <label><span>קטגוריה</span><select id="expenseCategory">
+            <option value="אוכל">🍝 אוכל</option><option value="קניות">🛍️ קניות</option>
+            <option value="תחבורה">🚗 תחבורה</option><option value="דלק">⛽ דלק</option>
+            <option value="חניה">🅿️ חניה</option><option value="אטרקציות">🎢 אטרקציות</option>
+            <option value="מלון">🏨 מלון</option><option value="אחר">📌 אחר</option>
+          </select></label>
+          <label><span>תאריך</span><input id="expenseDate" type="date" required></label>
+          <label><span>הערה</span><input id="expenseNote" type="text" placeholder="לדוגמה: ארוחת ערב באורטיזי"></label>
+          <button class="primary full-width" type="submit">הוסף הוצאה</button>
+        </form>
+      </section>
+      <section>
+        <div class="section-title"><h3>הוצאות שנרשמו</h3><button id="clearExpenses" class="danger-btn">מחק הכול</button></div>
+        <div id="expensesList"></div>
+      </section>
+    </section>
+
   </main>
 
   <nav class="bottom-nav">
@@ -94,6 +141,9 @@
     <button data-view="favoritesView">❤️<span>מועדפים</span></button>
     <button data-view="emergencyView">🆘<span>חירום</span></button>
   </nav>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="config.js"></script>
+  <script src="drive-sync.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

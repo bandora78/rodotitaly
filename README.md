@@ -1,18 +1,33 @@
-# Italy Trip Guide 2026
+# Italy Trip Guide 2026 – Google Drive Sync
 
-אתר סטטי בעברית, מותאם למובייל ול-GitHub Pages.
+האתר סטטי ומתאים ל-GitHub Pages. הנתונים נשמרים מקומית וגם מסתנכרנים לקובץ
+`italy-trip-data.json` בתוך תיקיית Google Drive App Data הפרטית של האפליקציה.
 
-## העלאה ל-GitHub Pages
-1. צור Repository חדש ב-GitHub.
-2. העלה את כל הקבצים שבתיקייה הראשית של הפרויקט.
-3. עבור אל Settings → Pages.
-4. תחת Build and deployment בחר Deploy from a branch.
-5. בחר branch בשם main ותיקייה /(root).
-6. שמור. לאחר מספר דקות יופיע קישור לאתר.
+## הגדרת Google Cloud
 
-## בדיקה מקומית
-בגלל שימוש ב-data.json וב-Service Worker, מומלץ לפתוח דרך שרת מקומי ולא בלחיצה כפולה על index.html.
-אפשר להשתמש ב-VS Code Live Server או בכל שרת HTTP פשוט.
+1. היכנס ל-Google Cloud Console וצור Project.
+2. הפעל את Google Drive API.
+3. הגדר OAuth consent screen.
+4. צור OAuth Client מסוג Web application.
+5. ב-Authorized JavaScript origins הוסף:
+   - את כתובת GitHub Pages שלך, לדוגמה `https://USERNAME.github.io`
+   - לבדיקה מקומית: `http://localhost:5500`
+6. העתק את Client ID בלבד.
+7. פתח את `config.js` והחלף את הערך:
+   `PASTE_YOUR_CLIENT_ID_HERE.apps.googleusercontent.com`
+8. העלה את כל הקבצים ל-GitHub Pages.
 
-## התאמות
-רוב תוכן הטיול נמצא בקובץ data.json.
+אין להשתמש או להעלות Client Secret.
+
+## שימוש
+
+- לחץ על “התחברות ל-Google”.
+- אשר גישה לנתוני האפליקציה ב-Drive.
+- בפעם הראשונה נוצר קובץ JSON פרטי.
+- שינויים נשמרים אוטומטית לאחר זמן קצר.
+- אפשר גם ללחוץ “סנכרן עכשיו”.
+
+## מגבלה חשובה
+
+`appDataFolder` שייך לחשבון Google מסוים ואינו ניתן לשיתוף. כדי לראות אותם נתונים
+בכל מכשירי המשפחה, יש להתחבר מאותו חשבון Google.
