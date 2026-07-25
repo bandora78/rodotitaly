@@ -10,23 +10,62 @@ const mapsLink=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURICo
 
 const expenses=()=>JSON.parse(localStorage.getItem("expenses")||"[]");
 const saveExpenses=x=>{localStorage.setItem("expenses",JSON.stringify(x));DriveSync.scheduleSave();};
-const money=n=>new Intl.NumberFormat("he-IL",{style:"currency",currency:"EUR"}).format(Number(n||0));
+const normalizeCurrency=c=>c==="ILS"?"ILS":"EUR";
+const money=(n,currency="EUR")=>new Intl.NumberFormat("he-IL",{style:"currency",currency:normalizeCurrency(currency)}).format(Number(n||0));
 function safeText(s){const d=document.createElement("div");d.textContent=s||"";return d.innerHTML}
 function renderExpenses(){
-  const list=expenses().sort((a,b)=>b.date.localeCompare(a.date));
-  $("#expenseTotal").textContent=money(list.reduce((s,x)=>s+Number(x.amount||0),0));
-  const grouped={}; list.forEach(x=>grouped[x.category]=(grouped[x.category]||0)+Number(x.amount||0));
-  $("#expenseByCategory").innerHTML=Object.entries(grouped).sort((a,b)=>b[1]-a[1])
-    .map(([cat,sum])=>`<span class="category-chip">${cat}: ${money(sum)}</span>`).join("")||'<span class="muted">עדיין לא נרשמו הוצאות</span>';
-  $("#expensesList").innerHTML=list.length?list.map(x=>`<article class="expense-row"><div><h4>${safeText(x.category)}${x.note?` · ${safeText(x.note)}`:""}</h4><div class="expense-meta">${formatDate(x.date)}</div><div class="expense-actions"><button class="delete-expense" onclick="deleteExpense('${x.id}')">מחק</button></div></div><div class="expense-amount">${money(x.amount)}</div></article>`).join(""):'<div class="empty">עדיין לא הוספתם הוצאות</div>';
+  const list=expenses()
+    .map(x=>({...x,currency:normalizeCurrency(x.currency)}))
+    .sort((a,b)=>b.date.localeCompare(a.date));
+
+  const totals={EUR:0,ILS:0};
+  list.forEach(x=>totals[x.currency]+=Number(x.amount||0));
+  $("#expenseTotalEUR").textContent=money(totals.EUR,"EUR");
+  $("#expenseTotalILS").textContent=money(totals.ILS,"ILS");
+
+  const grouped={};
+  list.forEach(x=>{
+    const key=`${x.category}|${x.currency}`;
+    grouped[key]=(grouped[key]||0)+Number(x.amount||0);
+  });
+  $("#expenseByCategory").innerHTML=Object.entries(grouped)
+    .sort((a,b)=>b[1]-a[1])
+    .map(([key,sum])=>{
+      const [cat,currency]=key.split("|");
+      return `<span class="category-chip">${safeText(cat)}: ${money(sum,currency)}</span>`;
+    }).join("")||'<span class="muted">עדיין לא נרשמו הוצאות</span>';
+
+  $("#expensesList").innerHTML=list.length?list.map(x=>`
+    <article class="expense-row">
+      <div>
+        <h4>${safeText(x.category)}${x.note?` · ${safeText(x.note)}`:""}</h4>
+        <div class="expense-meta">${formatDate(x.date)} · ${x.currency==="ILS"?"שקל":"אירו"}</div>
+        <div class="expense-actions"><button class="delete-expense" onclick="deleteExpense('${x.id}')">מחק</button></div>
+      </div>
+      <div class="expense-amount">${money(x.amount,x.currency)}</div>
+    </article>`).join(""):'<div class="empty">עדיין לא הוספתם הוצאות</div>';
 }
 window.deleteExpense=id=>{saveExpenses(expenses().filter(x=>x.id!==id));renderExpenses()}
 function setupExpenses(){
   $("#expenseDate").value=new Date().toISOString().slice(0,10);
   $("#expenseForm").onsubmit=e=>{
     e.preventDefault();
-    const item={id:String(Date.now()),amount:Number($("#expenseAmount").value),category:$("#expenseCategory").value,date:$("#expenseDate").value,note:$("#expenseNote").value.trim()};
-    const list=expenses(); list.push(item); saveExpenses(list); e.target.reset(); $("#expenseDate").value=new Date().toISOString().slice(0,10); renderExpenses();
+    const item={
+      id:String(Date.now()),
+      amount:Number($("#expenseAmount").value),
+      currency:normalizeCurrency($("#expenseCurrency").value),
+      category:$("#expenseCategory").value,
+      date:$("#expenseDate").value,
+      note:$("#expenseNote").value.trim()
+    };
+    const selectedCurrency=item.currency;
+    const list=expenses();
+    list.push(item);
+    saveExpenses(list);
+    e.target.reset();
+    $("#expenseDate").value=new Date().toISOString().slice(0,10);
+    $("#expenseCurrency").value=selectedCurrency;
+    renderExpenses();
   };
   $("#clearExpenses").onclick=()=>{if(confirm("למחוק את כל ההוצאות שנרשמו?")){localStorage.removeItem("expenses");renderExpenses();DriveSync.scheduleSave();}};
 }

@@ -24,3 +24,10 @@ main{max-width:760px;margin:auto;padding:14px}.view{display:none}.view.active{di
 .sync-dot.syncing{background:#e8b44b;animation:pulse 1s infinite}.sync-dot.offline{background:#999}
 .secondary-btn{border:1px solid var(--line);background:var(--card);color:var(--text);padding:10px 13px;border-radius:14px;font-weight:700}
 @keyframes pulse{50%{opacity:.35}}
+
+.currency-totals{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 14px}
+.currency-total{display:grid;gap:5px;padding:12px;border:1px solid var(--line);border-radius:15px;background:var(--bg)}
+.currency-total span{font-size:13px;color:var(--muted);font-weight:700}
+.currency-total strong{font-size:22px}
+.amount-currency-row{display:grid;grid-template-columns:1.5fr 1fr;gap:10px}
+@media(max-width:420px){.amount-currency-row{grid-template-columns:1fr 1fr}.currency-total strong{font-size:19px}}

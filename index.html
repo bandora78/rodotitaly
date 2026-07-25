@@ -108,14 +108,23 @@
     <section id="expensesView" class="view">
       <div class="view-head"><button class="back">→</button><h2>ניהול הוצאות</h2></div>
       <section class="card expense-summary">
-        <span class="muted">סה״כ הוצאות</span>
-        <h2 id="expenseTotal">€0.00</h2>
+        <span class="muted">סה״כ הוצאות לפי מטבע</span>
+        <div class="currency-totals">
+          <div class="currency-total"><span>🇪🇺 אירו</span><strong id="expenseTotalEUR">€0.00</strong></div>
+          <div class="currency-total"><span>🇮🇱 שקל</span><strong id="expenseTotalILS">‏0.00 ₪</strong></div>
+        </div>
         <div id="expenseByCategory" class="category-summary"></div>
       </section>
       <section class="card">
         <h3>הוספת הוצאה</h3>
         <form id="expenseForm" class="expense-form">
-          <label><span>סכום באירו</span><input id="expenseAmount" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="לדוגמה: 25.50"></label>
+          <div class="amount-currency-row">
+            <label><span>סכום</span><input id="expenseAmount" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="לדוגמה: 25.50"></label>
+            <label><span>מטבע</span><select id="expenseCurrency">
+              <option value="EUR">🇪🇺 אירו (€)</option>
+              <option value="ILS">🇮🇱 שקל (₪)</option>
+            </select></label>
+          </div>
           <label><span>קטגוריה</span><select id="expenseCategory">
             <option value="אוכל">🍝 אוכל</option><option value="קניות">🛍️ קניות</option>
             <option value="תחבורה">🚗 תחבורה</option><option value="דלק">⛽ דלק</option>
