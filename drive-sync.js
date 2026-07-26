@@ -2,6 +2,8 @@
 const DriveSync = (() => {
   const FILE_NAME = "italy-trip-data.json";
   const SCOPE = "https://www.googleapis.com/auth/drive.appdata";
+  const TOKEN_KEY = "trip_google_access_token";
+  const TOKEN_EXPIRY_KEY = "trip_google_token_expiry";
   let tokenClient = null;
   let accessToken = "";
   let fileId = "";
@@ -28,6 +30,8 @@ const DriveSync = (() => {
     });
     if(response.status === 401) {
       accessToken = "";
+      sessionStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(TOKEN_EXPIRY_KEY);
       updateButtons(false);
       setStatus("פג תוקף החיבור – יש להתחבר שוב", "offline");
       throw new Error("Google authorization expired");
@@ -150,6 +154,9 @@ const DriveSync = (() => {
       return;
     }
     accessToken = tokenResponse.access_token;
+    const expiresIn = Number(tokenResponse.expires_in || 3600);
+    sessionStorage.setItem(TOKEN_KEY, accessToken);
+    sessionStorage.setItem(TOKEN_EXPIRY_KEY, String(Date.now() + (expiresIn * 1000) - 60000));
     updateButtons(true);
     setStatus("מחובר – טוען נתונים מהענן…", "syncing");
     try {
@@ -192,8 +199,38 @@ const DriveSync = (() => {
     }
     accessToken = "";
     fileId = "";
+    sessionStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(TOKEN_EXPIRY_KEY);
     updateButtons(false);
     setStatus("לא מחובר ל-Google Drive", "offline");
+  }
+
+  async function restoreSession() {
+    const storedToken = sessionStorage.getItem(TOKEN_KEY) || "";
+    const expiry = Number(sessionStorage.getItem(TOKEN_EXPIRY_KEY) || 0);
+    if(!storedToken || Date.now() >= expiry) {
+      sessionStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(TOKEN_EXPIRY_KEY);
+      updateButtons(false);
+      setStatus("לא מחובר ל-Google Drive", "offline");
+      return;
+    }
+
+    accessToken = storedToken;
+    updateButtons(true);
+    setStatus("משחזר חיבור ל-Google Drive…", "syncing");
+    try {
+      await findFile();
+      if(fileId) await loadRemote();
+      setStatus("מחובר ומסונכרן עם Google Drive", "online");
+    } catch(error) {
+      console.error(error);
+      accessToken = "";
+      sessionStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(TOKEN_EXPIRY_KEY);
+      updateButtons(false);
+      setStatus("יש להתחבר מחדש ל-Google Drive", "offline");
+    }
   }
 
   function init() {
@@ -202,8 +239,7 @@ const DriveSync = (() => {
     document.querySelector("#connectDrive")?.addEventListener("click", connect);
     document.querySelector("#syncNow")?.addEventListener("click", saveNow);
     document.querySelector("#disconnectDrive")?.addEventListener("click", disconnect);
-    updateButtons(false);
-    setStatus("לא מחובר ל-Google Drive", "offline");
+    restoreSession();
   }
 
   return {init, connect, disconnect, saveNow, scheduleSave};
