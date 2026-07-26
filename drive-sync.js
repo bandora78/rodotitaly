@@ -67,7 +67,8 @@ const DriveSync = (() => {
       updatedAt: new Date().toISOString(),
       expenses: JSON.parse(localStorage.getItem("expenses") || "[]"),
       favorites: JSON.parse(localStorage.getItem("favorites") || "[]"),
-      checklist: JSON.parse(localStorage.getItem("checklist") || "{}")
+      checklist: JSON.parse(localStorage.getItem("checklist") || "{}"),
+      tasks: JSON.parse(localStorage.getItem("tripTasks") || "[]")
     };
   }
 
@@ -76,9 +77,11 @@ const DriveSync = (() => {
     if(Array.isArray(data.expenses)) localStorage.setItem("expenses", JSON.stringify(data.expenses));
     if(Array.isArray(data.favorites)) localStorage.setItem("favorites", JSON.stringify(data.favorites));
     if(data.checklist && typeof data.checklist === "object") localStorage.setItem("checklist", JSON.stringify(data.checklist));
+    if(Array.isArray(data.tasks)) localStorage.setItem("tripTasks", JSON.stringify(data.tasks));
     if(typeof renderExpenses === "function") renderExpenses();
     if(typeof renderFavorites === "function") renderFavorites();
     if(typeof renderChecklist === "function") renderChecklist();
+    if(typeof renderTasks === "function") renderTasks();
   }
 
   async function createFile(payload) {

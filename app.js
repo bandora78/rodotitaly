@@ -70,14 +70,34 @@ function setupExpenses(){
   $("#clearExpenses").onclick=()=>{if(confirm("למחוק את כל ההוצאות שנרשמו?")){localStorage.removeItem("expenses");renderExpenses();DriveSync.scheduleSave();}};
 }
 
+
+const tasks=()=>JSON.parse(localStorage.getItem("tripTasks")||"[]");
+const saveTasks=x=>{localStorage.setItem("tripTasks",JSON.stringify(x));DriveSync.scheduleSave();};
+let taskFilter="all";
+function renderTasks(){
+  const all=tasks().map(t=>({...t,done:Boolean(t.done)}));
+  const done=all.filter(t=>t.done).length;
+  if($("#tasksProgress")) $("#tasksProgress").textContent=`${done}/${all.length}`;
+  const visible=all.filter(t=>taskFilter==="all"||(taskFilter==="done"?t.done:!t.done)).sort((a,b)=>Number(a.done)-Number(b.done)||(a.dueDate||"9999").localeCompare(b.dueDate||"9999"));
+  $("#tasksList").innerHTML=visible.length?visible.map(t=>`<article class="task-row ${t.done?"done":""}"><label class="task-check"><input type="checkbox" ${t.done?"checked":""} onchange="toggleTask('${t.id}',this.checked)"><span>✓</span></label><div class="task-content"><h4>${safeText(t.title)}</h4><div class="task-meta">${t.dueDate?`📅 ${formatDate(t.dueDate)}`:""}${t.owner?` · 👤 ${safeText(t.owner)}`:""}</div>${t.note?`<p>${safeText(t.note)}</p>`:""}</div><button class="task-delete" onclick="deleteTask('${t.id}')">🗑️</button></article>`).join(""):'<div class="empty">אין משימות להצגה</div>';
+}
+window.toggleTask=(id,done)=>{saveTasks(tasks().map(t=>t.id===id?{...t,done}:t));renderTasks();};
+window.deleteTask=id=>{saveTasks(tasks().filter(t=>t.id!==id));renderTasks();};
+function setupTasks(){
+  $("#taskForm").onsubmit=e=>{e.preventDefault();const item={id:String(Date.now()),title:$("#taskTitle").value.trim(),dueDate:$("#taskDueDate").value,owner:$("#taskOwner").value.trim(),note:$("#taskNote").value.trim(),done:false};if(!item.title)return;const l=tasks();l.push(item);saveTasks(l);e.target.reset();renderTasks();};
+  $$(".task-filter").forEach(b=>b.onclick=()=>{$$(".task-filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");taskFilter=b.dataset.taskFilter;renderTasks();});
+  $("#clearCompletedTasks").onclick=()=>{if(confirm("למחוק את כל המשימות שהושלמו?")){saveTasks(tasks().filter(t=>!t.done));renderTasks();}};
+}
+
 async function init(){
   DATA=await fetch("data.json").then(r=>r.json());
-  renderHome(); renderDays(); renderHotels(); renderFood(); renderChecklist(); renderEmergency(); renderFavorites(); renderExpenses();
+  renderHome(); renderDays(); renderHotels(); renderFood(); renderChecklist(); renderEmergency(); renderFavorites(); renderExpenses(); renderTasks();
   bindNav();
   if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
   $("#themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("dark",document.body.classList.contains("dark"))};
   if(localStorage.getItem("dark")==="true") document.body.classList.add("dark");
   setupExpenses();
+  setupTasks();
   DriveSync.init();
 }
 function showView(id){

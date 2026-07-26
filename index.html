@@ -64,7 +64,6 @@
           <button class="quick" data-view="checklistView"><span>✅</span>רשימת ציוד</button>
           <button class="quick" data-view="emergencyView"><span>🆘</span>חירום</button>
           <button class="quick" data-view="favoritesView"><span>❤️</span>מועדפים</button>
-          <button class="quick" data-view="expensesView"><span>💶</span>הוצאות</button>
         </div>
       </section>
     </section>
@@ -142,11 +141,39 @@
       </section>
     </section>
 
+    <section id="tasksView" class="view">
+      <div class="view-head"><button class="back">→</button><h2>משימות לטיול</h2><span id="tasksProgress" class="task-progress">0/0</span></div>
+      <section class="card">
+        <form id="taskForm" class="task-form">
+          <label><span>משימה</span><input id="taskTitle" type="text" required maxlength="120" placeholder="לדוגמה: להזמין חניה בוונציה"></label>
+          <div class="task-form-row">
+            <label><span>תאריך יעד</span><input id="taskDueDate" type="date"></label>
+            <label><span>אחראי</span><input id="taskOwner" type="text" maxlength="60" placeholder="מי מטפל?"></label>
+          </div>
+          <label><span>הערה</span><input id="taskNote" type="text" maxlength="180" placeholder="פרטים נוספים"></label>
+          <button class="primary full-width" type="submit">הוסף משימה</button>
+        </form>
+      </section>
+      <section class="card">
+        <div class="task-toolbar">
+          <div class="task-filters">
+            <button type="button" class="task-filter active" data-task-filter="all">הכול</button>
+            <button type="button" class="task-filter" data-task-filter="open">פתוחות</button>
+            <button type="button" class="task-filter" data-task-filter="done">הושלמו</button>
+          </div>
+          <button id="clearCompletedTasks" type="button" class="secondary-btn">נקה שהושלמו</button>
+        </div>
+        <div id="tasksList" class="tasks-list"></div>
+      </section>
+    </section>
+
   </main>
 
   <nav class="bottom-nav">
     <button data-view="homeView" class="active">🏠<span>בית</span></button>
     <button data-view="daysView">📅<span>ימים</span></button>
+    <button data-view="expensesView">💳<span>הוצאות</span></button>
+    <button data-view="tasksView">✅<span>משימות</span></button>
     <button data-view="favoritesView">❤️<span>מועדפים</span></button>
     <button data-view="emergencyView">🆘<span>חירום</span></button>
   </nav>
