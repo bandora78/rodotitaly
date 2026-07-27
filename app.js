@@ -156,6 +156,22 @@ function renderDays(){
     <div class="mini-priority"><span>עדיפות היום</span><b>${stars(d.ratings?.worth||0)}</b></div>
   </article>`).join("");
 }
+
+function dayNavigationHtml(i){
+  const prev=i-1, next=i+1;
+  const hasPrev=prev>=0, hasNext=next<DATA.days.length;
+  return `<nav class="day-navigation" aria-label="ניווט בין ימי הטיול">
+    <button type="button" class="day-nav-button" ${hasPrev?`onclick="openDay(${prev})"`:"disabled"}>
+      <span class="day-nav-arrow">→</span>
+      <span><small>היום הקודם</small><strong>${hasPrev?formatDate(DATA.days[prev].date):"היום הראשון"}</strong></span>
+    </button>
+    <button type="button" class="day-nav-button" ${hasNext?`onclick="openDay(${next})"`:"disabled"}>
+      <span><small>היום הבא</small><strong>${hasNext?formatDate(DATA.days[next].date):"היום האחרון"}</strong></span>
+      <span class="day-nav-arrow">←</span>
+    </button>
+  </nav>`;
+}
+
 window.openDay=function(i){
   state.selectedDay=i; const d=DATA.days[i];
   $("#dayViewTitle").textContent=d.day+" · "+formatDate(d.date);
@@ -189,7 +205,9 @@ window.openDay=function(i){
   if(d.food?.length) html+=`<section><h2 class="section-heading">אוכל מומלץ</h2>${d.food.map(x=>foodCard(x,d.region)).join("")}</section>`;
   if(d.contacts?.length) html+=`<section><h2 class="section-heading">אנשי קשר</h2>${d.contacts.map(c=>`<div class="card"><b>${c.name}</b><div class="actions"><a href="tel:${c.phone}">📞 חיוג</a></div></div>`).join("")}</section>`;
   if(d.links?.length) html+=`<section><h2 class="section-heading">קישורים</h2><div class="card actions">${d.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">🌐 ${l.label}</a>`).join("")}</div></section>`;
+  html+=dayNavigationHtml(i);
   $("#dayContent").innerHTML=html; showView("dayView");
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 function eventHtml(d,e,j){
   const id=d.date+"-"+j, active=favorites().some(x=>x.id===id);
