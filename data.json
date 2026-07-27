@@ -29,7 +29,38 @@
       ],
       "notes": [
         "להכין מראש דרכונים, רישיונות נהיגה ושובר השכרת רכב."
-      ]
+      ],
+      "summary": "יום הגעה רגוע: טיסת ערב למילאנו, מעבר קצר למלון ליד מלפנסה והתארגנות לקראת איסוף הרכב בבוקר.",
+      "stats": {
+        "driving": "קצר",
+        "walking": "מעט",
+        "intensity": "קל",
+        "weather": "כמעט לא תלוי"
+      },
+      "badges": [
+        "יום טיסה",
+        "לינה ליד השדה",
+        "הכנות לרכב"
+      ],
+      "mustSee": [
+        "להגיע בנחת למלון",
+        "לארגן מסמכים לנהג הראשי",
+        "לנוח לפני יום המעבר"
+      ],
+      "prep": [
+        "דרכונים וכרטיסי טיסה",
+        "רישיונות נהיגה ישראלי ובינלאומי",
+        "שובר השכרת רכב מודפס",
+        "כרטיס אשראי בינלאומי על שם הנהג הראשי"
+      ],
+      "alternatives": [
+        "במקרה של עיכוב בטיסה – לעדכן את המלון או השאטל."
+      ],
+      "ratings": {
+        "worth": 2,
+        "photo": 1,
+        "family": 4
+      }
     },
     {
       "date": "2026-07-30",
@@ -62,20 +93,85 @@
           "title": "טיול בפסקרייה דל גארדה",
           "type": "walk",
           "details": "חניה ב-Festung Parcheggio, מעבר דרך Porta Brescia, העיר העתיקה והטיילת לאורך התעלות.",
-          "maps": "Festung Parcheggio Peschiera del Garda"
+          "maps": "Festung Parcheggio Peschiera del Garda",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 5
+          },
+          "priority": "חובה",
+          "parking": "Parcheggio Festung",
+          "route": [
+            "Ponte di Porta Brescia",
+            "העיר העתיקה ובית העירייה",
+            "Canale di Mezzo",
+            "Monumento del donatore AIDO",
+            "Voltoni Bridge",
+            "חזרה לאורך הגדה השנייה"
+          ],
+          "dontMiss": [
+            "הכניסה דרך החומות",
+            "הטיילת לאורך התעלות",
+            "La Gelateria HomeMade"
+          ]
         },
         {
           "time": "17:00",
           "title": "סירמיונה",
           "type": "walk",
           "details": "חניה ב-Parcheggio Monte Baldo וטיול בעיר העתיקה עד הערב.",
-          "maps": "Parcheggio Monte Baldo Sirmione"
+          "maps": "Parcheggio Monte Baldo Sirmione",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 5
+          },
+          "priority": "חובה",
+          "parking": "Parcheggio Monte Baldo",
+          "dontMiss": [
+            "הכניסה לעיר העתיקה",
+            "הסמטאות והטיילת",
+            "האווירה לקראת ערב"
+          ]
         }
       ],
       "food": [
         "Ristorante Il Cantinone",
         "La Gelateria HomeMade"
-      ]
+      ],
+      "summary": "מעבר ממילאנו לאגם גארדה, צ׳ק־אין ולאחריו שתי עיירות יפות: מסלול תעלות בפסקריה וערב בסירמיונה.",
+      "stats": {
+        "driving": "כ־2–3 שעות",
+        "walking": "קל–בינוני",
+        "intensity": "בינוני",
+        "weather": "גמיש"
+      },
+      "badges": [
+        "יום מעבר",
+        "עיר עתיקה",
+        "חניה מסודרת",
+        "ללא כרטיסים"
+      ],
+      "mustSee": [
+        "Ponte di Porta Brescia",
+        "Canale di Mezzo ו-Voltoni Bridge",
+        "העיר העתיקה של סירמיונה"
+      ],
+      "prep": [
+        "מסמכי השכרת הרכב",
+        "דיסק חניה",
+        "מים וכובעים",
+        "נעלי הליכה נוחות"
+      ],
+      "alternatives": [
+        "אם מגיעים מאוחר – לקצר את פסקריה ולשמור יותר זמן לסירמיונה.",
+        "אם עייפים – לבחור רק עיירה אחת ולהשלים את השנייה ביום אחר."
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 5
+      }
     },
     {
       "date": "2026-07-31",
@@ -89,7 +185,18 @@
           "title": "פארק גארדלנד",
           "type": "attraction",
           "details": "יום בפארק השעשועים. שעות מתוכננות: 10:00–23:00.",
-          "maps": "Gardaland Park"
+          "maps": "Gardaland Park",
+          "rating": {
+            "worth": 5,
+            "photo": 4,
+            "family": 5
+          },
+          "priority": "חובה",
+          "dontMiss": [
+            "המתקנים המרכזיים לפי גיל",
+            "הפסקות מים ואוכל",
+            "לבדוק שילוב LEGOLAND מראש"
+          ]
         },
         {
           "time": "לבחירה",
@@ -116,7 +223,54 @@
           "label": "אתר גארדלנד",
           "url": "https://www.gardaland.it/en"
         }
-      ]
+      ],
+      "summary": "יום מלא בגארדהלנד, עם אפשרות לאקווריום ולפארק המים של לגולנד. בערב ניתן להמשיך ללאציזה.",
+      "stats": {
+        "driving": "קצר",
+        "walking": "הרבה",
+        "intensity": "עמוס",
+        "weather": "חלקית תלוי"
+      },
+      "badges": [
+        "כרטיסים מראש",
+        "יום מלא",
+        "מתאים לילדים",
+        "בגדי ים אפשריים"
+      ],
+      "mustSee": [
+        "Gardaland Park",
+        "LEGOLAND Water Park אם מתאים",
+        "טיילת לאציזה בערב"
+      ],
+      "prep": [
+        "כרטיסי כניסה",
+        "כובע וקרם הגנה",
+        "בגדי ים ומגבות אם נכנסים ללגולנד",
+        "מטען נייד"
+      ],
+      "alternatives": [
+        "האקווריום הוא כרטיס נפרד ואפשר להשאירו ליום עמוס פחות.",
+        "אם הפארק מתיש – לוותר על לאציזה בערב."
+      ],
+      "bookings": [
+        {
+          "name": "Gardaland",
+          "status": "להזמין מראש"
+        },
+        {
+          "name": "LEGOLAND Water Park",
+          "status": "לפי עניין"
+        },
+        {
+          "name": "Aquarium",
+          "status": "כרטיס נפרד"
+        }
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 4,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-01",
@@ -130,7 +284,18 @@
           "title": "חוות פרמז'ן",
           "type": "food",
           "details": "סיור שהוזמן ב-4 Madonne Caseificio dell'Emilia.",
-          "maps": "4 Madonne Caseificio dell'Emilia"
+          "maps": "4 Madonne Caseificio dell'Emilia",
+          "rating": {
+            "worth": 5,
+            "photo": 4,
+            "family": 5
+          },
+          "priority": "חובה",
+          "dontMiss": [
+            "הסבר תהליך הייצור",
+            "חדרי היישון",
+            "טעימות"
+          ]
         },
         {
           "time": "צהריים",
@@ -160,7 +325,50 @@
           "label": "מוזיאון פרארי",
           "url": "https://www.ferrari.com/en-IL/museums"
         }
-      ]
+      ],
+      "summary": "יום מוטורי וקולינרי באמיליה רומאנה: חוות פרמז׳ן, למבורגיני ופרארי.",
+      "stats": {
+        "driving": "כ־45 דקות לכל כיוון ועוד מעברים",
+        "walking": "מעט",
+        "intensity": "בינוני",
+        "weather": "מתאים גם לגשם"
+      },
+      "badges": [
+        "הוזמן",
+        "מוזיאונים",
+        "יום רכב",
+        "סימולטור אופציונלי"
+      ],
+      "mustSee": [
+        "סיור חוות הפרמז׳ן",
+        "מוזיאון למבורגיני",
+        "מוזיאון פרארי במראנלו"
+      ],
+      "prep": [
+        "אישור ההזמנה לחווה",
+        "להגיע בזמן לסיור 10:00",
+        "לבדוק זמינות סימולטור פרארי",
+        "מטען לטלפון"
+      ],
+      "alternatives": [
+        "אם הזמן מתקצר – לשמור את מוזיאון פרארי, שפתוח עד 19:00.",
+        "יום מתאים במיוחד למזג אוויר גשום."
+      ],
+      "bookings": [
+        {
+          "name": "4 Madonne Caseificio",
+          "status": "הוזמן 10:00–11:00 · €100"
+        },
+        {
+          "name": "סימולטור פרארי",
+          "status": "מומלץ להזמין אם רוצים"
+        }
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 4,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-02",
@@ -201,7 +409,40 @@
         "Il Cortiletto",
         "HOSTARIA AL BUONGUSTO",
         "Waikiki Gelateria"
-      ]
+      ],
+      "summary": "יום מעבר צפונה: אגם טנו, לימונה על שפת גארדה ועלייה ללינה באורטיזי.",
+      "stats": {
+        "driving": "יום נסיעות",
+        "walking": "קל–בינוני",
+        "intensity": "בינוני",
+        "weather": "עדיף יבש"
+      },
+      "badges": [
+        "יום מעבר",
+        "אגם",
+        "אופניים אופציונלי",
+        "צ׳ק־אין חדש"
+      ],
+      "mustSee": [
+        "הצבעים של אגם טנו",
+        "הטיילת והלימונים בלימונה",
+        "Ciclopista del Garda אם יש זמן"
+      ],
+      "prep": [
+        "בגדי ים",
+        "נעלי הליכה",
+        "לבדוק זמן נסיעה לאורטיזי",
+        "להצטייד לפני העלייה לדולומיטים"
+      ],
+      "alternatives": [
+        "אם אין אפשרות לעצור עם הרכב – קיימת חלופת ורונה ולאחר מכן עלייה לדולומיטים.",
+        "אפשר לוותר על אופניים ולהסתפק בטיילת ובחוף Cola."
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-03",
@@ -215,7 +456,24 @@
           "title": "רכבל סשדה",
           "type": "nature",
           "details": "עלייה בשני קטעים. תצפית הצלב וההר האלכסוני. להתחיל מוקדם.",
-          "maps": "Seceda Cable Car Ortisei"
+          "maps": "Seceda Cable Car Ortisei",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 5
+          },
+          "priority": "שיא הטיול",
+          "route": [
+            "עלייה בשני קטעי רכבל",
+            "הליכה כ־300 מטר לנקודת הצלב",
+            "בחירה: חזרה קלה או ירידה דרך הבקתות",
+            "חזרה דרך Fermeda או ברגל לרכבל הראשי"
+          ],
+          "dontMiss": [
+            "הצלב וההר האלכסוני",
+            "התצפית לעמק",
+            "אחת מבקתות ההרים"
+          ]
         },
         {
           "time": "14:30",
@@ -237,7 +495,52 @@
           "label": "כרטיסי סשדה",
           "url": "https://seceda.axess.shop/en/Products/Tickets/Category?cID=4000"
         }
-      ]
+      ],
+      "summary": "אחד מימי השיא: עלייה לסשדה, תצפיות ומסלול אפשרי בין בקתות, פארק חבלים וסיום במדרחוב אורטיזי.",
+      "stats": {
+        "driving": "ללא רכב כמעט",
+        "walking": "בינוני–הרבה",
+        "intensity": "עמוס",
+        "weather": "תלוי מאוד"
+      },
+      "badges": [
+        "להתחיל מוקדם",
+        "רכבלים",
+        "נוף שיא",
+        "פארק חבלים"
+      ],
+      "mustSee": [
+        "נקודת הצלב וההר האלכסוני",
+        "מסלול הבקתות או רכבל Fermeda",
+        "המדרחוב Strada Rezia"
+      ],
+      "prep": [
+        "כרטיס לשני קטעי רכבל",
+        "לשקול Seceda Premium",
+        "נעלי הליכה",
+        "שכבה חמה ומעיל גשם",
+        "מים וחטיפים"
+      ],
+      "alternatives": [
+        "מסלול קל: תצפית וחזרה ברכבל ללא הליכה ארוכה.",
+        "מסלול מלא: ירידה דרך Troier, Daniel, Fermeda ו-Malga Nëidia.",
+        "בגשם – לעבור לתוכנית בולצאנו/מוזיאונים."
+      ],
+      "bookings": [
+        {
+          "name": "Seceda Premium",
+          "status": "מומלץ לרכבלים נוספים"
+        },
+        {
+          "name": "Col de Flam",
+          "status": "כ־€20 לאדם"
+        }
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-04",
@@ -263,7 +566,18 @@
           "time": "צהריים",
           "title": "WoodyWalk ו-PloseBob",
           "type": "attraction",
-          "details": "מסלול משפחתי ומזחלות אלפיניות."
+          "details": "מסלול משפחתי ומזחלות אלפיניות.",
+          "rating": {
+            "worth": 5,
+            "photo": 4,
+            "family": 5
+          },
+          "priority": "חובה",
+          "dontMiss": [
+            "WoodyWalk",
+            "PloseBob",
+            "תכנון זמן לקארטינג"
+          ]
         },
         {
           "time": "אחה״צ",
@@ -288,7 +602,40 @@
           "label": "אתר Plose",
           "url": "https://www.plose.org/en"
         }
-      ]
+      ],
+      "summary": "יום פעילות בהר Plose: רכבל, WoodyWalk, מזחלות וקארטינג הרים, ולאחר מכן קיוזה.",
+      "stats": {
+        "driving": "בינוני",
+        "walking": "בינוני",
+        "intensity": "עמוס",
+        "weather": "תלוי"
+      },
+      "badges": [
+        "יום הרים",
+        "קארטינג 9 ק״מ",
+        "פעילות משפחתית",
+        "בדיקת ימי פתיחה"
+      ],
+      "mustSee": [
+        "WoodyWalk",
+        "PloseBob",
+        "Mountain Carts"
+      ],
+      "prep": [
+        "לבדוק שהקארטינג פעיל ביום שלישי",
+        "לתכנן כ־4 שעות למעלה",
+        "לקנות כרטיס רכבל מתאים לפי מי שיורד בקארטינג",
+        "נעליים סגורות"
+      ],
+      "alternatives": [
+        "מי שלא עושה קארטינג קונה כרטיס הלוך ושוב לרכבל.",
+        "אם אין זמן – לוותר על קיוזה או לבחור רק פעילות הר אחת."
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 4,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-05",
@@ -308,7 +655,24 @@
           "title": "גני טראוטמנסדורף",
           "type": "nature",
           "details": "גנים מדורגים ומסלולים צבעוניים.",
-          "maps": "Trauttmansdorff Gardens"
+          "maps": "Trauttmansdorff Gardens",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 4
+          },
+          "priority": "חובה",
+          "route": [
+            "כניסה וקבלת מפה",
+            "להתחיל במסלול השמאלי – מסלול היער",
+            "להמשיך לנקודות התצפית העליונות",
+            "ירידה דרך אזורי הגנים"
+          ],
+          "dontMiss": [
+            "נקודות התצפית",
+            "הטרסות",
+            "המסלול השמאלי בתחילת הביקור"
+          ]
         },
         {
           "time": "צהריים",
@@ -318,7 +682,7 @@
           "maps": "Parcheggio Terme Merano"
         },
         {
-          "time": "16:00",
+          "time": "17:00–19:00",
           "title": "בולצאנו",
           "type": "walk",
           "details": "שוק Obstmarkt, Via dei Portici, Via Museo וקפה לואקר.",
@@ -330,7 +694,46 @@
           "label": "גני טראוטמנסדורף",
           "url": "https://www.trauttmansdorff.it/en"
         }
-      ]
+      ],
+      "summary": "גני טראוטמנסדורף, טיול נהר ומרכז היסטורי במראנו, וסיום אחר הצהריים בבולצאנו.",
+      "stats": {
+        "driving": "כ־2.5 שעות מצטבר",
+        "walking": "הרבה",
+        "intensity": "עמוס",
+        "weather": "עדיף יבש"
+      },
+      "badges": [
+        "גנים",
+        "עיר עתיקה",
+        "קניות",
+        "קפה לואקר"
+      ],
+      "mustSee": [
+        "מסלול היער בגני טראוטמנסדורף",
+        "Gilfpromenade במראנו",
+        "Obstmarkt ו-Via dei Portici בבולצאנו"
+      ],
+      "prep": [
+        "נעלי הליכה",
+        "מפת המסלולים בכניסה לגנים",
+        "לכוון חניה ל-Parcheggio Terme",
+        "לשמור זמן לנסיעה חזרה"
+      ],
+      "alternatives": [
+        "בגשם: מראנו, מרחצאות Terme Meran וקניון Twenty.",
+        "אפשר לקצר את בולצאנו אם הגנים לוקחים יותר זמן."
+      ],
+      "bookings": [
+        {
+          "name": "גני טראוטמנסדורף",
+          "status": "כרטיס משפחתי €36"
+        }
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 4
+      }
     },
     {
       "date": "2026-08-06",
@@ -357,7 +760,18 @@
           "title": "Avisio Rafting",
           "type": "attraction",
           "details": "להגיע לפחות 15 דקות מראש.",
-          "maps": "Avisio Rafting"
+          "maps": "Avisio Rafting",
+          "rating": {
+            "worth": 5,
+            "photo": 4,
+            "family": 5
+          },
+          "priority": "חובה",
+          "dontMiss": [
+            "להגיע רבע שעה מוקדם",
+            "בגדים להחלפה",
+            "תיאום איסוף"
+          ]
         },
         {
           "time": "במקביל",
@@ -379,7 +793,46 @@
           "name": "לוצ׳יה – ראפטינג",
           "phone": "+393475323839"
         }
-      ]
+      ],
+      "summary": "כביש נוף דרך מעבר סלה, ראפטינג שהוזמן, פעילות מקבילה ב-Latemar ואפשרות לאגם קארצה.",
+      "stats": {
+        "driving": "בינוני",
+        "walking": "מעט",
+        "intensity": "עמוס",
+        "weather": "תלוי"
+      },
+      "badges": [
+        "הוזמן",
+        "ראפטינג",
+        "פיצול משפחתי",
+        "להגיע מוקדם"
+      ],
+      "mustSee": [
+        "Passo Sella",
+        "Avisio Rafting",
+        "Latemar MontagnAnimata"
+      ],
+      "prep": [
+        "להגיע לראפטינג 15 דקות מראש",
+        "בגדים להחלפה ונעליים מתאימות",
+        "לתאם הורדה ואיסוף בין שתי הקבוצות",
+        "טלפון של לוצ׳יה"
+      ],
+      "alternatives": [
+        "אגם קארצה רק אם נשאר זמן.",
+        "אפשר לעצור ב-ANTERMONT בדרך חזרה לנוף ואוכל."
+      ],
+      "bookings": [
+        {
+          "name": "Avisio Rafting",
+          "status": "הוזמן · €50 מבוגר / €38 ילד"
+        }
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-07",
@@ -399,7 +852,19 @@
           "title": "Rastenbachklamm",
           "type": "nature",
           "details": "מסלול בנקיק. חניה ב-Müllereck Parkplatz.",
-          "maps": "Müllereck Parkplatz"
+          "maps": "Müllereck Parkplatz",
+          "rating": {
+            "worth": 4,
+            "photo": 5,
+            "family": 4
+          },
+          "priority": "מומלץ",
+          "parking": "Parkplatz Müllereck",
+          "dontMiss": [
+            "הנקיק",
+            "הגשרים והשבילים",
+            "הירידה לאגם"
+          ]
         },
         {
           "time": "צהריים",
@@ -411,7 +876,40 @@
       ],
       "food": [
         "Restaurant Pizzeria Geier"
-      ]
+      ],
+      "summary": "מסלול טבע בנקיק Rastenbachklamm ולאחריו יום נופש רגוע בחוף אגם קלטרר.",
+      "stats": {
+        "driving": "כ־שעה לכל כיוון",
+        "walking": "בינוני",
+        "intensity": "מאוזן",
+        "weather": "תלוי"
+      },
+      "badges": [
+        "נקיק",
+        "אגם נופש",
+        "בגדי ים",
+        "יום מאוזן"
+      ],
+      "mustSee": [
+        "Rastenbachklamm",
+        "Lido am Kalterer See",
+        "ארוחה ב-Pizzeria Geier"
+      ],
+      "prep": [
+        "נעלי הליכה טובות",
+        "בגדי ים ומגבות",
+        "קרם הגנה",
+        "מים"
+      ],
+      "alternatives": [
+        "אם חם מאוד – לקצר את הנקיק ולהאריך את זמן האגם.",
+        "בגשם – להשתמש בתוכנית מראנו/בולצאנו."
+      ],
+      "ratings": {
+        "worth": 4,
+        "photo": 5,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-08",
@@ -425,7 +923,18 @@
           "title": "זיפליין Monte Pana",
           "type": "attraction",
           "details": "להזמין חלון בוקר מראש.",
-          "maps": "Zipline Monte Pana"
+          "maps": "Zipline Monte Pana",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 5
+          },
+          "priority": "חובה",
+          "dontMiss": [
+            "חלון הבוקר",
+            "שני קווי המסלול",
+            "צילום בנוף"
+          ]
         },
         {
           "time": "11:30",
@@ -446,17 +955,30 @@
           "details": "אפשר לשלב לפי הזמן."
         },
         {
-          "time": "15:30",
-          "title": "רכיבה על סוסים",
-          "type": "attraction",
-          "details": "חוות Pozzamanigoni בסלבה.",
-          "maps": "Pozzamanigoni"
-        }
-      ],
-      "contacts": [
+          "time": "אחה״צ",
+          "title": "מפלי Tervela",
+          "type": "nature",
+          "details": "חניה ליד Apartments Calonia והליכה של כ-7 דקות למסלול שמתחיל מאחורי הקשת.",
+          "maps": "Cascata Waterfall Tervela Santa Cristina",
+          "rating": {
+            "worth": 4,
+            "photo": 5,
+            "family": 4
+          },
+          "priority": "מומלץ"
+        },
         {
-          "name": "ג׳וליה – רכיבה",
-          "phone": "+393484023981"
+          "time": "לקראת ערב",
+          "title": "Vallunga",
+          "type": "nature",
+          "details": "מסלול מעגלי קל בעמק ליד סלבה, עם אחו ירוק, פסלים וספסלים.",
+          "maps": "Vallunga Selva di Val Gardena",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 5
+          },
+          "priority": "חובה"
         }
       ],
       "links": [
@@ -464,7 +986,46 @@
           "label": "Zipline Monte Pana",
           "url": "https://www.ziplinemontepana.com/en"
         }
-      ]
+      ],
+      "summary": "יום משפחתי במונטה פאנה: זיפליין, שני מסלולים קצרים, מיני גולף, מפל ועמק ואלונגה.",
+      "stats": {
+        "driving": "קצר",
+        "walking": "בינוני",
+        "intensity": "עמוס וגמיש",
+        "weather": "תלוי"
+      },
+      "badges": [
+        "זיפליין",
+        "מסלולים חינמיים",
+        "פעילויות ילדים",
+        "קרוב למלון"
+      ],
+      "mustSee": [
+        "Zipline Monte Pana",
+        "Pana Raida",
+        "Vallunga"
+      ],
+      "prep": [
+        "להזמין חלון 09:30 לזיפליין",
+        "נעליים סגורות",
+        "מים וחטיפים",
+        "לבדוק חניה במדחנים"
+      ],
+      "alternatives": [
+        "Troi Unika הוא מסלול קצר שאפשר להוסיף או להוריד לפי זמן.",
+        "אפשר לבחור בין המפל ל-Valunga אם היום מתארך."
+      ],
+      "bookings": [
+        {
+          "name": "Zipline Monte Pana",
+          "status": "מומלץ להזמין מראש · €28–€58"
+        }
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 5
+      }
     },
     {
       "date": "2026-08-09",
@@ -478,7 +1039,18 @@
           "title": "Passo Sella ו-Passo Fedaia",
           "type": "nature",
           "details": "נסיעת נוף, אגם פאדאיה והסכר.",
-          "maps": "Passo Fedaia"
+          "maps": "Passo Fedaia",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 4
+          },
+          "priority": "חובה",
+          "dontMiss": [
+            "אגם פאדאיה",
+            "הסכר",
+            "הר מרמולדה"
+          ]
         },
         {
           "time": "צהריים",
@@ -506,7 +1078,40 @@
         "Madly",
         "Boomerang",
         "Ristorante Pizzeria Vecio Decimo"
-      ]
+      ],
+      "summary": "יום מעבר מרהיב מהדולומיטים לוונציה דרך מעברי הרים, סוטוגודה, אגם אלגה ופארק מיס.",
+      "stats": {
+        "driving": "הרבה",
+        "walking": "קל",
+        "intensity": "בינוני",
+        "weather": "עדיף ראות טובה"
+      },
+      "badges": [
+        "יום מעבר",
+        "כבישי נוף",
+        "עצירות צילום",
+        "לינה ליד ונציה"
+      ],
+      "mustSee": [
+        "Passo Fedaia והסכר",
+        "רחוב האמנים בסוטוגודה",
+        "הלב על אגם אלגה"
+      ],
+      "prep": [
+        "לתדלק לפני הדרך",
+        "להוריד ניווט אופליין",
+        "להצטייד באוכל ומים",
+        "לשמור זמן לצ׳ק־אין ליד ונציה"
+      ],
+      "alternatives": [
+        "אם הראות גרועה – לקצר עצירות במעברים.",
+        "פארק מיס הוא עצירה נעימה אך אפשר לוותר עליו אם מאחרים."
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 4
+      }
     },
     {
       "date": "2026-08-10",
@@ -532,7 +1137,26 @@
           "time": "10:00",
           "title": "טיול בוונציה",
           "type": "walk",
-          "details": "הרובע היהודי, גונדולה S. Sofia, גשר ריאלטו, סמטאות וכיכר סן מרקו."
+          "details": "הרובע היהודי, גונדולה S. Sofia, גשר ריאלטו, סמטאות וכיכר סן מרקו.",
+          "rating": {
+            "worth": 5,
+            "photo": 5,
+            "family": 5
+          },
+          "priority": "חובה",
+          "route": [
+            "Venezia Santa Lucia",
+            "הרובע היהודי",
+            "Gondola Station S. Sofia",
+            "גשר ריאלטו",
+            "סמטאות ונציה",
+            "כיכר סן מרקו"
+          ],
+          "dontMiss": [
+            "ריאלטו",
+            "סן מרקו",
+            "הליכה בסמטאות"
+          ]
         },
         {
           "time": "16:00",
@@ -564,7 +1188,50 @@
         "Cafe Brunch",
         "Al Grill",
         "Hard Rock Cafe Venice"
-      ]
+      ],
+      "summary": "יום ונציה מלא ולאחריו רכבת חזרה, תדלוק, החזרת הרכב וטיסה לישראל.",
+      "stats": {
+        "driving": "קצר",
+        "walking": "הרבה מאוד",
+        "intensity": "עמוס",
+        "weather": "גמיש"
+      },
+      "badges": [
+        "רכבת",
+        "יום אחרון",
+        "הרבה הליכה",
+        "לוח זמנים קשיח"
+      ],
+      "mustSee": [
+        "הרובע היהודי",
+        "גשר ריאלטו",
+        "כיכר סן מרקו"
+      ],
+      "prep": [
+        "כרטיס רכבת הלוך",
+        "לבדוק רכבת חזרה לכיוון Portogruaro או Trieste",
+        "לשמור זמן לתדלוק ולהחזרת הרכב",
+        "דרכונים וכרטיסי טיסה נגישים"
+      ],
+      "alternatives": [
+        "אם עייפים – לבחור מסלול ישיר מריאלטו לסן מרקו.",
+        "יש לחזור ברכבת סביב 16:00 כדי לשמור מרווח לשדה."
+      ],
+      "bookings": [
+        {
+          "name": "Al Grill",
+          "status": "מומלץ להזמין מקום"
+        },
+        {
+          "name": "רכבת Quarto d'Altino–Venezia",
+          "status": "לקנות הלוך; חזור בוונציה"
+        }
+      ],
+      "ratings": {
+        "worth": 5,
+        "photo": 5,
+        "family": 5
+      }
     }
   ],
   "hotels": [

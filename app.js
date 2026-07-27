@@ -127,16 +127,65 @@ function renderHome(){
   else msg="הטיול הסתיים – הזיכרונות נשארים";
   $("#countdown").textContent=msg;
 }
+
+function stars(n=0){return "★".repeat(Math.max(0,Math.min(5,n)))+"☆".repeat(Math.max(0,5-Math.min(5,n)))}
+function ratingRows(r={}){
+  return `<div class="rating-grid">
+    <div><span>שווה להשקיע</span><b>${stars(r.worth||0)}</b></div>
+    <div><span>פוטוגני</span><b>${stars(r.photo||0)}</b></div>
+    <div><span>מתאים למשפחה</span><b>${stars(r.family||0)}</b></div>
+  </div>`;
+}
+function chips(items=[]){return items.map(x=>`<span class="day-chip">${safeText(x)}</span>`).join("")}
+function listBlock(title,items=[],icon="•"){
+  if(!items?.length) return "";
+  return `<details class="detail-panel"><summary>${title}</summary><ul>${items.map(x=>`<li>${icon} ${safeText(x)}</li>`).join("")}</ul></details>`;
+}
 function renderDays(){
-  $("#daysList").innerHTML=DATA.days.map((d,i)=>`<article class="card day-card" onclick="openDay(${i})">
-    <div class="date-row"><div><span class="muted">${d.day} · ${formatDate(d.date)}</span><h3>${d.title}</h3><div class="region">${d.region}</div></div><span>←</span></div>
+  $("#daysList").innerHTML=DATA.days.map((d,i)=>`<article class="card day-card overview-day" onclick="openDay(${i})">
+    <div class="date-row">
+      <div>
+        <span class="muted">${d.day} · ${formatDate(d.date)}</span>
+        <h3>${d.title}</h3>
+        <div class="region">${d.region}</div>
+      </div>
+      <span class="day-arrow">←</span>
+    </div>
+    <p class="day-summary">${safeText(d.summary||"")}</p>
+    <div class="day-chips">${chips((d.badges||[]).slice(0,3))}</div>
+    <div class="mini-priority"><span>עדיפות היום</span><b>${stars(d.ratings?.worth||0)}</b></div>
   </article>`).join("");
 }
 window.openDay=function(i){
   state.selectedDay=i; const d=DATA.days[i];
   $("#dayViewTitle").textContent=d.day+" · "+formatDate(d.date);
-  let html=`<section class="card"><span class="muted">${d.region}</span><h2>${d.title}</h2><p>🏨 ${d.hotel}</p></section><div class="timeline">`;
-  html+=d.events.map((e,j)=>eventHtml(d,e,j)).join("")+"</div>";
+  const stats=d.stats||{};
+  let html=`<section class="day-hero card">
+    <span class="muted">${safeText(d.region)}</span>
+    <h2>${safeText(d.title)}</h2>
+    <p>${safeText(d.summary||"")}</p>
+    <div class="day-chips">${chips(d.badges||[])}</div>
+    ${ratingRows(d.ratings||{})}
+    <div class="day-stats">
+      <div><span>🚗 נסיעה</span><b>${safeText(stats.driving||"—")}</b></div>
+      <div><span>🚶 הליכה</span><b>${safeText(stats.walking||"—")}</b></div>
+      <div><span>⚡ עומס</span><b>${safeText(stats.intensity||"—")}</b></div>
+      <div><span>🌦️ מזג אוויר</span><b>${safeText(stats.weather||"—")}</b></div>
+    </div>
+    <p class="hotel-line">🏨 ${safeText(d.hotel)}</p>
+  </section>`;
+
+  if(d.mustSee?.length) html+=`<section class="must-see card">
+    <div class="section-title"><div><span class="muted">כשאין זמן להכול</span><h2>מה אסור לפספס</h2></div><span>⭐</span></div>
+    <ol>${d.mustSee.map(x=>`<li>${safeText(x)}</li>`).join("")}</ol>
+  </section>`;
+
+  html+=`<section><div class="section-title day-section-title"><div><span class="muted">המבט המלא</span><h2>מסלול היום</h2></div><span>${d.events.length} תחנות</span></div><div class="timeline">`;
+  html+=d.events.map((e,j)=>eventHtml(d,e,j)).join("")+"</div></section>";
+
+  if(d.bookings?.length) html+=`<section><h2 class="section-heading">הזמנות וכרטיסים</h2><div class="booking-list">${d.bookings.map(b=>`<div class="booking-row"><b>${safeText(b.name)}</b><span>${safeText(b.status)}</span></div>`).join("")}</div></section>`;
+  html+=listBlock("🎒 לפני שיוצאים",d.prep||[],"✓");
+  html+=listBlock("🔁 תוכניות חלופיות וקיצורים",d.alternatives||[],"↳");
   if(d.food?.length) html+=`<section><h2 class="section-heading">אוכל מומלץ</h2>${d.food.map(x=>foodCard(x,d.region)).join("")}</section>`;
   if(d.contacts?.length) html+=`<section><h2 class="section-heading">אנשי קשר</h2>${d.contacts.map(c=>`<div class="card"><b>${c.name}</b><div class="actions"><a href="tel:${c.phone}">📞 חיוג</a></div></div>`).join("")}</section>`;
   if(d.links?.length) html+=`<section><h2 class="section-heading">קישורים</h2><div class="card actions">${d.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">🌐 ${l.label}</a>`).join("")}</div></section>`;
@@ -144,10 +193,23 @@ window.openDay=function(i){
 }
 function eventHtml(d,e,j){
   const id=d.date+"-"+j, active=favorites().some(x=>x.id===id);
-  return `<article class="event"><div class="event-top"><div><h3>${e.title}</h3><div class="muted">${e.details||""}</div></div><span class="time">${e.time}</span></div>
-  <div class="actions">${e.maps?`<a target="_blank" rel="noopener" href="${mapsLink(e.maps)}">📍 ניווט</a>`:""}
-  <button class="fav-btn ${active?"active":""}" onclick='toggleFavorite(${JSON.stringify(JSON.stringify({id,title:e.title,subtitle:d.title,maps:e.maps||""}))},this)'>❤️</button></div></article>`;
+  const extra=`
+    ${e.priority?`<span class="priority-badge">${safeText(e.priority)}</span>`:""}
+    ${e.rating?ratingRows(e.rating):""}
+    ${e.parking?`<div class="info-line"><b>🚗 חניה:</b> ${safeText(e.parking)}</div>`:""}
+    ${e.route?.length?`<div class="route-box"><b>מסלול מומלץ</b><ol>${e.route.map(x=>`<li>${safeText(x)}</li>`).join("")}</ol></div>`:""}
+    ${e.dontMiss?.length?`<div class="dont-miss"><b>⭐ אל תפספסו</b><ul>${e.dontMiss.map(x=>`<li>${safeText(x)}</li>`).join("")}</ul></div>`:""}`;
+  return `<article class="event">
+    <div class="event-top">
+      <div><h3>${safeText(e.title)}</h3><div class="muted">${safeText(e.details||"")}</div></div>
+      <span class="time">${safeText(e.time)}</span>
+    </div>
+    <details class="event-details"><summary>פתח פרטים</summary>${extra}</details>
+    <div class="actions">${e.maps?`<a target="_blank" rel="noopener" href="${mapsLink(e.maps)}">📍 ניווט</a>`:""}
+    <button class="fav-btn ${active?"active":""}" onclick='toggleFavorite(${JSON.stringify(JSON.stringify({id,title:e.title,subtitle:d.title,maps:e.maps||""}))},this)'>❤️</button></div>
+  </article>`;
 }
+
 window.toggleFavorite=function(payload,btn){
   const item=JSON.parse(payload), f=favorites(), i=f.findIndex(x=>x.id===item.id);
   if(i>=0) f.splice(i,1); else f.push(item);
